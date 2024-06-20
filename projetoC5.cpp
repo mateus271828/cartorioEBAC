@@ -18,7 +18,7 @@ int inserir() //Função responsavel por cadastrar os usuários no sistema
 	printf("\tDigite o CPF a ser cadastrado: "); //Solicitando informação do usuário
 	scanf("%s", CPF); //%s refere-se a string
 	
-	strcpy(arquivo, CPF); //responsavel por copiar os calores das string
+	strcpy(arquivo, CPF); //responsavel por copiar os valores das string
 	
 	FILE *file; // cria o arquivo
 	
@@ -81,7 +81,7 @@ int consultar() //variavel de consulta
 	FILE *file; //ativando o arquivo
 	file = fopen(CPF,"r"); //lendo o arquivo
 			
-	if(file == NULL) //função if para cado o arquivo não seja encontrado
+	if(file == NULL) //função if para caso o arquivo não seja encontrado
 	{
 	printf("Não foi possivel localiza-lo\n"); //mensagem que notifica para o usuário que o arquivo não foi encontrado
 	system("pause"); // pausa no sistema para  que o usuário possa ler a mensagem
@@ -136,7 +136,8 @@ int main() //finção principal do sistema, que exibe o menu principal
 		printf ("\t---------------Como posso judar?---------------\n");
 		printf ("\t1 Inserir uruário\n\n");
 		printf ("\t2 consultar usuário\n\n");
-		printf ("\t3 excluir usuário\n\n");    
+		printf ("\t3 excluir usuário\n\n");
+		printf ("\t4 Sair do sistema\n");
 		printf ("\t Opção:");                                                   //Fim do menu
 	
 		scanf("%d", &opcao);  //Armazenando a escola do usuario
@@ -157,6 +158,11 @@ int main() //finção principal do sistema, que exibe o menu principal
 				
 			case 3:
 				excluir();
+				break;
+				
+			case 4:
+				printf("\tObrigado, até mais!\n");
+				return 0;
 				break;
 				
 			default: // caso responsavel por opção não apresentada ao usuário
